@@ -1,8 +1,8 @@
 insum(_, N, N, R, R) :- !.
-insum(Z, N, I, R, RESIN) :- INC is I + 1
-                          , SUMU is Z / log(I)
-                          , RESOUT is RESIN + SUMU
-                          , insum(C, N, INC, R, RESOUT).
+insum(CUR, N, I, R, RESIN) :- INC is I + 1
+                            , SUMU is CUR / log(I)
+                            , RESOUT is RESIN + SUMU
+                            , insum(CUR, N, INC, R, RESOUT).
 
 outsum(N, N, R, R) :- !.
 outsum(N, I, R, RES) :- COSIN is cos(I)
